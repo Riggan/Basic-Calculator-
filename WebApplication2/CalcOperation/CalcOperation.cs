@@ -8,9 +8,9 @@ namespace WebApplication2.CalcOperation
 {
     public class CalcOperation
     {
-        public  Total(int value1, int value2, string calc)
+        public static double Total(int value1, int value2, string calc) //make this class a static double 
         {
-            int total = 0;
+            double total = 0; //shuold be a double
             switch (calc)
             {
                 case "+":
@@ -29,7 +29,7 @@ namespace WebApplication2.CalcOperation
                     total = 0;
                     break;
             }
-            return Content(total);
+            return total; //not sure what content(total) was maybe I missed something
         }
     }
 }

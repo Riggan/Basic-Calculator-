@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using CalcOperation; 
+using WebApplication2.CalcOperation;  //not using CalcOperation
 
 namespace WebApplication2.Controllers
 {
@@ -14,10 +14,13 @@ namespace WebApplication2.Controllers
             return View();
         }
 
-        [HttpPost]
-
-        public ActionResult Total(int value1, int value2, string calc);
         
+        [HttpPost]
+        public ActionResult Total(int value1, int value2, string calc)
+        {
+            ViewBag.Value = CalcOperation.CalcOperation.Total(value1, value2, calc);
+            return View("Index");
         }
+        
     }
 }

@@ -1,39 +1,40 @@
 ﻿
 @{
-    Layout = null;
+    
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width"/>
-    <title>Index</title>
-</head>
-<body>
-    <div>
+
+    <div style="padding-top:50px">
         
-            <form action="Calc/Total" method="post">
+        <form asp-action="Total" method="post">
+            Value 1
+            <input type="text" name="value1" />
+            &nbsp &nbsp
+            Value 2
+            <input type="text" name="value2" />
+            <br />
+            <br />
+            
+            <input type="radio" name="calc" value="+" />+ &nbsp &nbsp
 
-                Value 1
-                <input type="text" name="value1" />
-                <br />
-                Value 2
-                <input type="text" name="value2" />
-                <br />
-                <br />
-                <input  type="radio" name="calc" value="+"/>+
+            <input type="radio" name="calc" value="-" />- &nbsp &nbsp
 
-                <input type="radio" name="calc" value="-"/>-
+            <input type="radio" name="calc" value="*" />* &nbsp &nbsp
 
-                <input type="radio" name="calc" value="*"/>*
-
-                <input type="radio" name="calc" value="/"/>/
-                <br />
-                <br /> 
-                <input type="submit" value="SUBMIT" />
-            </form>
+            <input type="radio" name="calc" value="/" />/ &nbsp &nbsp
+            <br />
+            <br />
+            <input class="btn btn-outline-dark" type="submit" value="SUBMIT" />
+        </form>
         </div>
-</body>
-</html>
+    <div class="jumbotron">
+            @if(ViewBag.Value != null)
+        {
+            <h5>Your Answer is: @ViewBag.Value</h5>
+
+        }
+    </div>
+    
+
 
 
